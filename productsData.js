@@ -238,5 +238,9 @@ let products = [
     }
   }
 ];
-
-module.exports = products;
+// Eğer bir API gibi kullanılacaksa, JSON formatında dönsün:
+window.productsData = products; // Browser için
+// Veya doğrudan export edelim (Node.js için):
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = products;
+}
